@@ -142,7 +142,7 @@ class System(pl.LightningModule):
 
     def predict_step(self, batch, batch_idx):
         x = batch
-        x = x.type(torch.cuda.FloatTensor)
+        x = x.type(torch.FloatTensor)
 
         y_pred = self.forward(x)
         y_pred = y_pred.type(torch.FloatTensor)
